@@ -22,7 +22,7 @@
 
 
     <div id="param">
-      <div id="rando"> <!-- generate random song -->
+      <div> <!-- generate random song -->
         <button id="randobtn">Random</button>
       </div>
 
@@ -31,9 +31,9 @@
     <!-- choose genre and playlist to refine song suggester -->
 
       <div id="genre-select">
-        <label for="genre">Genre:</label>
-        <select name="genre">
-          <option value=""></option>
+        <label>Genre:</label>
+        <select id="genres">
+          <option value="" selected></option>
           <option value="hiphop">Hip Hop</option>
           <option value="pop">Pop</option>
           <option value="country">Country</option>
@@ -59,8 +59,8 @@
       </div>
 
       <div id="playlist-select" class="hidden">
-        <label for="playlist">Playlist:</label>
-        <select name="playlist">
+        <label>Playlist:</label>
+        <select id="playlists">
           <option value=""></option>
         </select>
       </div>
