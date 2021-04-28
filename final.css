@@ -1,5 +1,6 @@
 body {
   font-family: 'Gothic A1', sans-serif;
+  font-size: 14px;
   color: white;
   background: #191414;
   margin: 0em;
@@ -8,6 +9,27 @@ body {
 h1 {
   font-weight: bold;
   font-size: 10vh;
+  margin: 0em;
+}
+
+button {
+  width: 150px;
+  height: 36px;
+  font-size: 16px;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  background-color: #1DB954;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: 'Gothic A1', sans-serif;
+  text-align: center;
+
+}
+
+button:hover {
+  background-color: #77d598;
+  color: #191414;
 }
 
 /* #play{
@@ -46,14 +68,23 @@ h1 {
   background: linear-gradient(transparent, #191414), url("img/bg.svg") no-repeat center;
 }
 
-#info {
+#header p {
+  padding: 0em;
+  margin-top: 0em;
+  margin-bottom: 20px;
+}
+
+
+#param {
   border-radius: 10px;
   border: 2px solid #1DB954;
   height: 400px;
   text-align: center;
+  margin: 5px;
+  padding: 2em;
 }
 
-#genre-select {
+#genre-select, #playlist-select {
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -64,9 +95,14 @@ h1 {
 
 }
 
+#genre-select label, #playlist-select label {
+  text-transform: uppercase;
+  align-self: center;
+}
 
 
-#genre-select select {
+
+#genre-select select, #playlist-select select{
   background-color: white;
   margin-left: 10px;
   padding: 5px;

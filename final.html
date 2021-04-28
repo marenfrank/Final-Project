@@ -20,12 +20,15 @@
 
   <div id="container">
 
-  <div id="info">
-    <div id="rando">
+  <div id="param">
+
+    <div id="rando"> <!-- generate random song -->
       <button id="randobtn">Random</button>
     </div>
 
     <p> or </p>
+
+    <!-- choose genre and playlist to refine song suggester -->
 
     <div id="genre-select">
       <label for="genre-select">Genre:</label>
@@ -54,9 +57,21 @@
         <option value="caribean">Caribean</option>
       </select>
     </div>
-  </div><!-- end songinfo -->
 
-    <div id="song">
+    <div id="playlist-select" class="hidden">
+      <label for="playlist-select">Playlist:</label>
+      <select name="playlist">
+        <option value=""></option>
+      </select>
+
+    </div>
+
+    <button id="songbtn" class="hidden">Find a song</button>
+
+
+  </div><!-- end param -->
+
+    <div id="song"><!-- where selected song info is displayed -->
     </div>
 
   </div>
