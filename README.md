@@ -7,3 +7,4 @@ new song to have stuck in their head!
 
 # Credits
 * Helper functions made by Prof. Bei Xiao
+* OAuth from Spotify API requirements
