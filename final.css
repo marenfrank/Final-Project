@@ -19,7 +19,7 @@ button {
   border-radius: 20px;
   border: none;
   color: white;
-  background-color: #1DB954;
+  background-color: #191414;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   font-family: 'Gothic A1', sans-serif;
@@ -28,44 +28,22 @@ button {
 }
 
 button:hover {
-  background-color: #77d598;
-  color: #191414;
+  background-color: #02ff80;
+  transition: 0.5s;
+
 }
 
-/* #play{
-  box-sizing: border-box;
-  border-style: solid;
-  border-width: 12px 0px 12px 24px;
-  border-color: transparent transparent transparent #1DB954;
-  transition: all 100ms ease-in-out;
-}
 
-#pause{ */
-  /* border: 0px 12px 0px 12px;
-  border-color: #1DB954; */
-  /* background-color: #1DB954;
-  width: 10px;
-} */
 
 .hidden {
   display: none;
 }
 
-#song {
-  width: 80%;
-  height: 400px;
-  background-color: white;
-  margin-top: 0em;
-  border-radius: 10px;
-  margin: 5px;
-}
-
-
 
 #header {
   margin: 0em;
   padding: 6em 1em 1em 2em;
-  background: linear-gradient(transparent, #191414), url("img/bg.svg") no-repeat center;
+  background: linear-gradient(transparent, #191414), url("img/bg.jpeg") repeat center;
 }
 
 #header p {
@@ -74,26 +52,43 @@ button:hover {
   margin-bottom: 20px;
 }
 
+#song {
+  width: 500px;
+  height: 500px;
+  border: 2px solid #02ff80;
+  margin-top: 0em;
+  border-radius: 10px;
+  margin: 5px;
+}
+
 
 #param {
+  width: 300px;
   border-radius: 10px;
-  border: 2px solid #1DB954;
-  height: 400px;
+  background-image: linear-gradient(#02ff80, #00098b);
   text-align: center;
   margin: 5px;
   padding: 2em;
 }
 
-#genre-select, #playlist-select {
+#genre-select{
   display: flex;
   justify-content: center;
-  align-items: flex-start;
   font-weight: bold;
-  width: 70%;
   margin: 5px;
   padding: 2em;
 
 }
+
+#playlist-select {
+  justify-content: center;
+  font-weight: bold;
+  margin: 5px;
+  padding: 2em;
+
+}
+
+
 
 #genre-select label, #playlist-select label {
   text-transform: uppercase;
@@ -104,6 +99,7 @@ button:hover {
 
 #genre-select select, #playlist-select select{
   background-color: white;
+  width: 200px;
   margin-left: 10px;
   padding: 5px;
   border-radius: 5px;
@@ -114,21 +110,24 @@ button:hover {
 }
 
 
+
 #container {
   display: flex;
+  flex-flow: row wrap;
   justify-content: center;
-  margin: 0% 10% 0% 10%;
+  margin: 0px 5% 0% 5%;
+  padding: 0px;
+  flex: 1 100%;
 }
 
 #foot {
-
-	transform: translate(-90%, -50%);
+	width: 100%;
   height: 100px;
 }
 
 /* ------------------------------------------------------------ */
 /* media query containing styles for smaller screens */
-@media (max-width: 800px) {
+@media (max-width: 980px) {
   #header {
     text-align: center;
   }
@@ -137,6 +136,11 @@ button:hover {
     display: flex;
     justify-content: center;
     margin: 0px;
+  }
+
+  #param, #song {
+    width: 100%;
+
   }
 
 
