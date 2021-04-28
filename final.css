@@ -1,0 +1,109 @@
+body {
+  font-family: 'Gothic A1', sans-serif;
+  color: white;
+  background: #191414;
+  margin: 0em;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 10vh;
+}
+
+/* #play{
+  box-sizing: border-box;
+  border-style: solid;
+  border-width: 12px 0px 12px 24px;
+  border-color: transparent transparent transparent #1DB954;
+  transition: all 100ms ease-in-out;
+}
+
+#pause{ */
+  /* border: 0px 12px 0px 12px;
+  border-color: #1DB954; */
+  /* background-color: #1DB954;
+  width: 10px;
+} */
+
+.hidden {
+  display: none;
+}
+
+#song {
+  width: 80%;
+  height: 400px;
+  background-color: white;
+  margin-top: 0em;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+
+
+#header {
+  margin: 0em;
+  padding: 6em 1em 1em 2em;
+  background: linear-gradient(transparent, #191414), url("img/bg.svg") no-repeat center;
+}
+
+#info {
+  border-radius: 10px;
+  border: 2px solid #1DB954;
+  height: 400px;
+  text-align: center;
+}
+
+#genre-select {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-weight: bold;
+  width: 70%;
+  margin: 5px;
+  padding: 2em;
+
+}
+
+
+
+#genre-select select {
+  background-color: white;
+  margin-left: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: white;
+  border: none;
+  font-family: 'Gothic A1', sans-serif;
+
+}
+
+
+#container {
+  display: flex;
+  justify-content: center;
+  margin: 0% 10% 0% 10%;
+}
+
+#foot {
+
+	transform: translate(-90%, -50%);
+  height: 100px;
+}
+
+/* ------------------------------------------------------------ */
+/* media query containing styles for smaller screens */
+@media (max-width: 800px) {
+  #header {
+    text-align: center;
+  }
+
+  #container {
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+  }
+
+
+
+
+} /* end media query */
