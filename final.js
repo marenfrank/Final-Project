@@ -7,13 +7,7 @@
 
 
   function init() {
-    let play = id("play");
-    let pause = id("pause");
-
-    play.addEventListener("click", function(){
-      play.classList.add("hidden");
-      pause.classList.remove("hidden");
-    });
+    
 
 
   }
