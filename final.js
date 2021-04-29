@@ -2,7 +2,7 @@
   "use strict";
 
   const URL1 = "https://api.opencagedata.com/geocode/v1/json?q="
-  const URL2 = "https://www.7timer.info/bin/astro.php?";
+  const URL2 = "https://www.7timer.info/bin/civil.php?";
 
 
 
@@ -44,7 +44,6 @@
   }
 
   function getCords(location){
-
     //encodes parameters
     location = encodeURIComponent(location);
     let url = URL1 + location + "&key=bac3f6dcad324dfc9cd02acbb67d1d90&pretty=1";
@@ -57,14 +56,16 @@
   }
 
   function postCords(response){
+    //spits up text to get long and lat values
     let cords = response.split('"lat"')[3];
     let latitude = cords.substr(2,7);
     let long = cords.substr(37, 37);
     let longitude = long.substr(1,6);
 
+    //displays long and lat values
     id("lonlat").innerText = latitude + "°, " + longitude + "°";
 
-
+    //uses long and lat vlaues to generate weather info
     id("weatherbtn").classList.remove("hidden");
     id("weatherbtn").addEventListener("click", function(){
       getWeather(latitude, longitude);
@@ -75,10 +76,10 @@
   function getWeather(latitude, longitude){
     //src for graph png
     let src = URL2 + "lon=" + longitude + "&lat=" + latitude + "ac=0&lang=en&unit=metric&output=internal&tzshift=0";
-    //url to get weather date
+    //url to get weather data
     let url = URL2 + "lon=" + longitude + "&lat=" + latitude + "&ac=0&unit=metric&output=json&tzshift=0";
 
-
+    //sets sun image to weather graph
     id("pic").src = src;
 
     fetch(url)
@@ -90,6 +91,11 @@
   }
 
   function postWeather(response){
+    let data = response.split('}, {');
+
+
+    //message about weather date
+    id("quicklook").classList.remove("hidden");
     id("message").classList.remove("hidden");
     id("place").innerText = id("plname").value;
 
