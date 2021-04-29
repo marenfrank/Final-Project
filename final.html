@@ -2,75 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Songgester</title>
+  <title>Weather Today!</title>
   <link rel="stylesheet" href="final.css">
-  <link rel="shortcut icon" type="image/png" href="img/logo.png"/>
+  <link rel="shortcut icon" type="image/png" href="img/cloud.png"/>
   <script src="final.js"></script>
 
   <!-- Webfonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;400;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <div id="header">
-  <h1>Songgester</h1>
-  <p>Discover the next song to stay stuck in your head!</p>
+  <h1>Weather Today!</h1>
+  <p>Discover an indepth forecast for weather in your area today.</p>
 </div>
 
   <div id="container">
 
+    <div id="location">
+      <h2> Location </h2>
+      <form>
+        <label for="plname">City:</label>
+        <input type="text" id="plname" name="plname"><br>
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="country">
+      </form>
 
-    <div id="param">
-      <div> <!-- generate random song -->
-        <button id="randobtn">Random</button>
-      </div>
+      <button id="locationbtn">Locate!</button> <!-- calls geolocate api -->
+      <p>You area is located at: <span id="lonlat"></span></p>
+      <button id="weatherbtn">Find Forcast!</button> <!-- calls forecast api with longitude and latitude-->
 
-      <p> or </p>
+    </div>
+    <!-- end location div -->
 
-    <!-- choose genre and playlist to refine song suggester -->
-
-      <div id="genre-select">
-        <label>Genre:</label>
-        <select id="genres">
-          <option value="" selected></option>
-          <option value="hiphop">Hip Hop</option>
-          <option value="pop">Pop</option>
-          <option value="country">Country</option>
-          <option value="rock">Rock</option>
-          <option value="latin">Latin</option>
-          <option value="rnb">R&B</option>
-          <option value="indie">indie</option>
-          <option value="dance">Dance</option>
-          <option value="classical">Classical</option>
-          <option value="jazz">Jazz</option>
-          <option value="folk">Folk & Acoustic</option>
-          <option value="soul">Soul</option>
-          <option value="punk">Punk</option>
-          <option value="alt">Alternative</option>
-          <option value="metal">Metal</option>
-          <option value="funk">Funk</option>
-          <option value="blues">Blues</option>
-          <option value="desi">Desi</option>
-          <option value="arab">Arab</option>
-          <option value="afro">Afro</option>
-          <option value="caribean">Caribean</option>
-        </select>
-      </div>
-
-      <div id="playlist-select" class="hidden">
-        <label>Playlist:</label>
-        <select id="playlists">
-          <option value=""></option>
-        </select>
-      </div>
-
-      <button id="songbtn" class="hidden">Find a song</button>
-
-
-    </div><!-- end param -->
-
-    <div id="song"><!-- where selected song info is displayed -->
+    <div id="weather"><!-- where weather info is displayed -->
+      <h2> Weather Report </h2>
     </div>
 
   </div>

@@ -1,38 +1,22 @@
 body {
-  font-family: 'Gothic A1', sans-serif;
-  font-size: 14px;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 18px;
   color: white;
-  background: #191414;
+  background: #42bdf8;
   margin: 0em;
 }
 
 h1 {
-  font-weight: bold;
+  font-family: 'Krona One', sans-serif;
   font-size: 10vh;
   margin: 0em;
 }
 
-button {
-  width: 150px;
-  height: 36px;
-  font-size: 16px;
-  border-radius: 20px;
-  border: none;
-  color: white;
-  background-color: #191414;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-family: 'Gothic A1', sans-serif;
+h2 {
+  font-family: 'Krona One', sans-serif;
+  align-self: center;
   text-align: center;
-
 }
-
-button:hover {
-  background-color: #02ff80;
-  transition: 0.5s;
-
-}
-
 
 
 .hidden {
@@ -43,71 +27,68 @@ button:hover {
 #header {
   margin: 0em;
   padding: 6em 1em 1em 2em;
-  background: linear-gradient(transparent, #191414), url("img/bg.jpeg") repeat center;
+  background: linear-gradient(transparent, #42bdf8), url("img/bg.jpeg") repeat center;
 }
 
 #header p {
-  padding: 0em;
-  margin-top: 0em;
-  margin-bottom: 20px;
+  padding: 0;
+  margin: 0px 0px 20px 20px;
+
 }
 
-#song {
-  width: 500px;
-  height: 500px;
-  border: 2px solid #02ff80;
-  margin-top: 0em;
+#location {
+  width: 400px;
+  height: 400px;
+  background-image: linear-gradient(white, #46bdf7);
+  color: #073b54;
   border-radius: 10px;
+  padding: 1.5em;
   margin: 5px;
-}
 
-
-#param {
-  width: 300px;
-  border-radius: 10px;
-  background-image: linear-gradient(#02ff80, #00098b);
-  text-align: center;
-  margin: 5px;
-  padding: 2em;
-}
-
-#genre-select{
-  display: flex;
-  justify-content: center;
-  font-weight: bold;
-  margin: 5px;
-  padding: 2em;
-
-}
-
-#playlist-select {
-  justify-content: center;
-  font-weight: bold;
-  margin: 5px;
-  padding: 2em;
 
 }
 
 
-
-#genre-select label, #playlist-select label {
-  text-transform: uppercase;
-  align-self: center;
+label, #lonlat {
+  font-family: 'Krona One', sans-serif;
 }
 
+input {
+  margin: 5px 0px 10px 0px;
+  width: 100%;
+}
 
-
-#genre-select select, #playlist-select select{
-  background-color: white;
-  width: 200px;
-  margin-left: 10px;
-  padding: 5px;
-  border-radius: 5px;
-  background-color: white;
+ 
+button {
+  color: white;
+  width: 100%;
+  background-color: #faa302;
   border: none;
-  font-family: 'Gothic A1', sans-serif;
+  border-radius: 20px;
+  text-transform: uppercase;
+  font-size: 20px;
+  padding: 5px 20px 5px 20px;
+  margin: 5px 0px 5px 0px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+button:hover {
+  background-color: #fab973;
+}
+
+#weather {
+  width: 400px;
+  height: 400px;
+  padding: 1.5em;
+  margin: 5px;
+  border-radius: 10px;
+  border: 2px solid white;
+
 
 }
+
+
 
 
 
@@ -138,10 +119,6 @@ button:hover {
     margin: 0px;
   }
 
-  #param, #song {
-    width: 100%;
-
-  }
 
 
 

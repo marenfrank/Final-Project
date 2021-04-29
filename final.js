@@ -1,6 +1,8 @@
 (function() {
   "use strict";
-  const URL = "https://api.spotify.com/v1/search?query=";
+
+  const URL1 = "https://api.opencagedata.com/geocode/v1/json?q="
+  const URL2 = "https://www.7timer.info/bin/astro.php?";
 
 
   window.addEventListener("load", init);
@@ -9,17 +11,28 @@
   function init(){
 
 
-    let randobnt = id("randobtn");
-    let songbtn = id("songbtn");
-
-    let sel = id("genres");
-    let genre = sel.options[sel.selectedIndex].value;
 
 
-    //
-    // if(genre == "hiphop"){
-    //   alert("test");
-    // }
+
+
+  }
+
+  function getLocation(){
+
+    // let url = URL + "Muse&type=track&market=US&limit=10&offset=10";
+
+
+  }
+
+  function postLocation(){
+    
+  }
+
+  function getWeather(repsonse){
+
+  }
+
+  function postWeather(response){
 
 
 
