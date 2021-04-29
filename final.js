@@ -12,10 +12,15 @@
   function init(){
 
     id("locationbtn").addEventListener("click", function(){
-      getCords(id("plname").value + "," + id("country").value);
+      if(id("plname").value && id("country").value != ""){
+        getCords(id("plname").value + "," + id("country").value);
+      } else {
+        alert("Please put a city and country!");
+      }
+
     });
 
-    //functions to enlarge images
+    //functions to enlarge graphs
     let big = document.getElementById("myModal");
     let modalImg = document.getElementById("img01");
 
@@ -52,22 +57,28 @@
   }
 
   function postCords(response){
+    let cords = [];
+
+
     let longitude;
     let latitude;
 
 
-    id("weather").innerHTML = response;
-
     id("weatherbtn").classList.remove("hidden");
     id("weatherbtn").addEventListener("click", function(){
       getWeather(longitude, latitude);
-    })
+    });
 
   }
 
   function getWeather(longitude, latitude){
+    //src for graph png
+    let src = URL2 + "lon=" + longitude + "&lat=" + latitude + "ac=0&lang=en&unit=metric&output=internal&tzshift=0";
+    //url to get weather date
+    let url = URL2 + "lon=" + longitude + "&lat=" + latitude + "&ac=0&unit=metric&output=json&tzshift=0";
 
-    let url = URL2 + "lon=" + longitude + "&lat=" + latitude + "ac=0&lang=en&unit=metric&output=internal&tzshift=0";
+
+    id("pic").src = src;
 
     fetch(url)
       .then(checkStatus)
@@ -78,7 +89,8 @@
   }
 
   function postWeather(response){
-
+    id("message").classList.remove("hidden");
+    id("place").innerText = id("plname").value;
 
 
   }
