@@ -18,26 +18,37 @@
   <p>Discover an indepth forecast for weather in your area today.</p>
 </div>
 
+  <div id="myModal" class="modal">
+    <!-- The Close Button -->
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+  </div>
+
   <div id="container">
 
     <div id="location">
       <h2> Location </h2>
       <form>
         <label for="plname">City:</label>
-        <input type="text" id="plname" name="plname"><br>
+        <input type="text" id="plname" name="plname" placeholder="Washington, DC"><br>
         <label for="country">Country:</label>
-        <input type="text" id="country" name="country">
+        <input type="text" id="country" name="country" placeholder="US">
       </form>
 
-      <button id="locationbtn">Locate!</button> <!-- calls geolocate api -->
+      <button id="locationbtn">Locate!</button>
+      <!-- calls geolocate api -->
       <p>You area is located at: <span id="lonlat"></span></p>
-      <button id="weatherbtn">Find Forcast!</button> <!-- calls forecast api with longitude and latitude-->
+      <!-- Where coordinates are displayed -->
+      <button id="weatherbtn" class="hidden">Find Forcast!</button>
+      <!-- calls forecast api with longitude and latitude-->
 
     </div>
     <!-- end location div -->
 
-    <div id="weather"><!-- where weather info is displayed -->
+    <div id="weather">
+      <!-- where weather info is displayed -->
       <h2> Weather Report </h2>
+      <img id="pic" src="img/sun.png" alt="Personal Weather Report">
     </div>
 
   </div>

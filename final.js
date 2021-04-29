@@ -5,30 +5,75 @@
   const URL2 = "https://www.7timer.info/bin/astro.php?";
 
 
+
   window.addEventListener("load", init);
 
 
   function init(){
 
+    id("locationbtn").addEventListener("click", function(){
+      getCords(id("plname").value + "," + id("country").value);
+    });
 
+    //functions to enlarge images
+    let big = document.getElementById("myModal");
+    let modalImg = document.getElementById("img01");
 
+    document.querySelectorAll("img").forEach(item => {
+      item.addEventListener("click", function(){
+          clickBig(item);
+      });
+    });
 
+    function clickBig(pic){
+      big.style.display = "block";
+      modalImg.src = pic.src;
+    }
+
+    let x = document.getElementsByClassName("close")[0];
+    x.addEventListener("click", function(){
+      big.style.display = "none";
+    });
 
 
   }
 
-  function getLocation(){
+  function getCords(location){
 
-    // let url = URL + "Muse&type=track&market=US&limit=10&offset=10";
+    //encodes parameters
+    location = encodeURIComponent(location);
+    let url = URL1 + location + "&key=bac3f6dcad324dfc9cd02acbb67d1d90&pretty=1";
 
+    fetch(url)
+      .then(checkStatus)
+      .then(response => response.text())
+      .then(postCords)
+      .catch(handleError);
+  }
+
+  function postCords(response){
+    let longitude;
+    let latitude;
+
+
+    id("weather").innerHTML = response;
+
+    id("weatherbtn").classList.remove("hidden");
+    id("weatherbtn").addEventListener("click", function(){
+      getWeather(longitude, latitude);
+    })
 
   }
 
-  function postLocation(){
-    
-  }
+  function getWeather(longitude, latitude){
 
-  function getWeather(repsonse){
+    let url = URL2 + "lon=" + longitude + "&lat=" + latitude + "ac=0&lang=en&unit=metric&output=internal&tzshift=0";
+
+    fetch(url)
+      .then(checkStatus)
+      .then(response => response.text())
+      .then(postWeather)
+      .catch(handleError);
 
   }
 
@@ -37,6 +82,8 @@
 
 
   }
+
+
 
 
 
