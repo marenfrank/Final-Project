@@ -57,21 +57,22 @@
   }
 
   function postCords(response){
-    let cords = [];
+    let cords = response.split('"lat"')[3];
+    let latitude = cords.substr(2,7);
+    let long = cords.substr(37, 37);
+    let longitude = long.substr(1,6);
 
-
-    let longitude;
-    let latitude;
+    id("lonlat").innerText = latitude + "°, " + longitude + "°";
 
 
     id("weatherbtn").classList.remove("hidden");
     id("weatherbtn").addEventListener("click", function(){
-      getWeather(longitude, latitude);
+      getWeather(latitude, longitude);
     });
 
   }
 
-  function getWeather(longitude, latitude){
+  function getWeather(latitude, longitude){
     //src for graph png
     let src = URL2 + "lon=" + longitude + "&lat=" + latitude + "ac=0&lang=en&unit=metric&output=internal&tzshift=0";
     //url to get weather date
