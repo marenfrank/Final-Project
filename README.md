@@ -1,11 +1,11 @@
 # Final Project for CSC-336
-My final project for CSC-336: Web Programming is a mobile app that find's the user's location and generates a weather report for them.
+My final project for CSC-336: Web Programming is a mobile app that finds the user's location and generates a weather report for them.
 
 # Features
 * Locates user's desired coordinates
 * Uses desired coordinates to develop personalized weather report
-* Uses diagrams and charts to display weather report
-* Users can save their charts for later
+* Uses diagrams and data chart to display weather report
+* Users can save their locations and weather data for later
 
 # Credits
 * Helper functions made by Prof. Bei Xiao
