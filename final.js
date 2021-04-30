@@ -3,6 +3,7 @@
 
   const URL1 = "https://api.opencagedata.com/geocode/v1/json?q="
   const URL2 = "https://www.7timer.info/bin/civil.php?";
+  document.cookie = "promo_shown=1; Max-Age=2600000 SameSite=None; Secure";
 
 
 
@@ -10,6 +11,7 @@
 
 
   function init(){
+
 
     id("locationbtn").addEventListener("click", function(){
       if(id("plname").value && id("country").value != ""){
@@ -19,6 +21,24 @@
       }
 
     });
+
+    //functions for scroll to top
+    let toTop = document.getElementById("toTop");
+    window.onscroll = function(){scrollFunction();};
+
+    toTop.addEventListener("click",function(){
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    });
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        toTop.style.display = "block";
+      } else {
+        toTop.style.display = "none";
+      }
+    }
+
 
     //functions to enlarge graphs
     let big = document.getElementById("myModal");
@@ -79,6 +99,7 @@
     //url to get weather data
     let url = URL2 + "lon=" + longitude + "&lat=" + latitude + "&ac=0&unit=metric&output=json&tzshift=0";
 
+    id("wr").classList.remove("hidden");
     //sets sun image to weather graph
     id("pic").src = src;
 
@@ -91,7 +112,6 @@
   }
 
   function postWeather(response){
-    let data = response.split('}, {');
 
 
     //message about weather date
