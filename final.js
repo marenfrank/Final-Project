@@ -6,9 +6,7 @@
   // document.cookie = "promo_shown=1; Max-Age=2600000 SameSite=None; Secure";
 
 
-
   window.addEventListener("load", init);
-
 
   function init(){
     //calls gets users location input and passes through OpenCage API
@@ -37,7 +35,6 @@
       }
     }
 
-
     //functions to enlarge graphs
     let big = document.getElementById("myModal");
     let modalImg = document.getElementById("img01");
@@ -57,8 +54,6 @@
     x.addEventListener("click", function(){
       big.style.display = "none";
     });
-
-
   }
 
   //Coordinates funtion
@@ -90,7 +85,6 @@
     id("weatherbtn").addEventListener("click", function(){
       getWeather(latitude, longitude);
     });
-
   }
 
   function getWeather(latitude, longitude){
@@ -245,10 +239,6 @@
       return "None"
     }
   }
-
-
-
-
 
 
   /**

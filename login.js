@@ -46,7 +46,7 @@
     id("loginbtn").addEventListener("click", function(){
 
       for(let i = 0; i < library.length; i++){
-        if(library.hasOwnProperty(id("uname").value) && library[i] == id("password").value){
+        if(library.hasOwnProperty(id("uname").value) && library[i] == id("psw").value){
             window.location.href='final.html';
         }else{
           alert("Username or password incorrect");

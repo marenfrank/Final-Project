@@ -151,8 +151,6 @@ td {
 }
 
 
-
-
 #container, #logcontainer {
   display: flex;
   flex-flow: row wrap;
@@ -272,8 +270,6 @@ td {
   #forms {
     width: 90%;
   }
-
-
 
 
 
