@@ -1,6 +1,11 @@
 (function() {
   "use strict";
 
+  //holds user and passwords
+  const library = {
+    marenv: "Truman12",
+  };
+
 
 
   window.addEventListener("load", init);
@@ -39,11 +44,20 @@
     });
 
     id("loginbtn").addEventListener("click", function(){
-      window.location.href='final.html';
+
+      for(let i = 0; i < library.length; i++){
+        if(library.hasOwnProperty(id("uname").value) && library[i] == id("password").value){
+            window.location.href='final.html';
+        }else{
+          alert("Username or password incorrect");
+        }
+      }
+
     });
 
-
-
+    id("forgot").addEventListener("click", function(){
+      alert("Shame! Remember it next time!");
+    });
 
 
 
